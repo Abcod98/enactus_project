@@ -1,6 +1,39 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
+
+// Tipado de los miembros del equipo
+interface Miembro {
+    nombre: string;
+    rol: string;
+}
+
+const equipo: Miembro[] = [
+    { nombre: "Abner Chopen", rol: "Presidente" },
+    { nombre: "Sara Gallardo", rol: "Vicepresidenta" },
+    { nombre: "Juan Tuyuc", rol: "Secretario De Proyectos" },
+    { nombre: "Brayan Calima", rol: "Proyectos" },
+    { nombre: "Celeste Pacheco", rol: "Proyectos" },
+    { nombre: "Raquel Reyes", rol: "Marketing" },
+    { nombre: "Lili Chumil", rol: "Marketing" },
+    { nombre: "Marta Tzorin", rol: "Marketing" },
+    { nombre: "Rosangela Guarcax", rol: "Marketing" },
+    { nombre: "Natan Saquic", rol: "Marketing" },
+    { nombre: "Miriam Guzman", rol: "Recursos Humanos" },
+    { nombre: "Stephany Vail", rol: "Relaciones Exteriores" },
+    { nombre: "Dina Suy", rol: "Finanzas" },
+    { nombre: "Juan Ixcamparic", rol: "Finanzas" },
+    { nombre: "Manuela Cumes", rol: "Gestiones" },
+];
+
+// Función para generar la ruta de la foto
+function generarRutaFoto(nombre: string): string {
+    return `/src/assets/equipo/${nombre
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // quita acentos
+        .replace(/\s+/g, "-") // espacios a guiones
+        .toLowerCase()}.jpg`; // formato JPG
+}
 ---
 
 <html lang="es">
@@ -12,25 +45,20 @@ import Navbar from "../components/Navbar.astro";
     <body>
         <Navbar />
         <section class="section">
-            <h2>Nuestro Equipo</h2>
+            <h2 style="text-align: center;">Nuestro Equipo</h2>
             <div
-                style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem;"
+                style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; justify-content: center;"
             >
                 {
-                    [
-                        { nombre: "Ana", rol: "Líder de proyecto" },
-                        { nombre: "Luis", rol: "Diseñador" },
-                        { nombre: "Marta", rol: "Investigadora" },
-                        { nombre: "José", rol: "Programador" },
-                    ].map(({ nombre, rol }) => (
+                    equipo.map(({ nombre, rol }) => (
                         <div
                             class="card"
                             style="width: 250px; text-align: center;"
                         >
                             <img
-                                src="https://via.placeholder.com/150"
+                                src={generarRutaFoto(nombre)}
                                 alt={nombre}
-                                style="border-radius: 50%; margin-bottom: 1rem;"
+                                style="width: 160px; height: 200px; object-fit: cover; margin-bottom: 1rem;"
                             />
                             <h3>{nombre}</h3>
                             <p>{rol}</p>
