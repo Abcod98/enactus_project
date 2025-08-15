@@ -6,24 +6,141 @@ import Navbar from "../../components/Navbar.astro";
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Proyecto Miel - Enactus</title>
+        <title>Proyecto La Miel - Enactus</title>
+        <style>
+            /* Animación de desvanecido */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(10px);
+                animation: fadeIn 0.6s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Botón mejorado */
+            .button {
+                display: inline-block;
+                background-color: #2e7d32;
+                color: #000;
+                padding: 0.7rem 1.5rem;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.2s ease;
+            }
+
+            .button:hover {
+                background-color: #fbc02d;
+                transform: scale(1.03);
+            }
+
+            /* Imagen con sombra y borde */
+            .project-img {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Sección con max width */
+            .section {
+                max-width: 900px;
+                margin: auto;
+                padding: 1rem;
+                line-height: 1.6;
+            }
+
+            h2 {
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                color: #1b5e20;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #333;
+                margin-bottom: 0.8rem;
+            }
+
+            .highlight-box {
+                margin-top: 2rem;
+                background: #fff3e0;
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+
+            .highlight-box h3 {
+                margin-bottom: 0.8rem;
+                color: #bf360c;
+            }
+
+            .highlight-box ul {
+                list-style: disc;
+                padding-left: 1.2rem;
+            }
+        </style>
     </head>
     <body>
         <Navbar />
-        <section class="section">
-            <a href="/Proyectos" class="button">Volver a Proyectos</a>
-            <h2>Proyecto Miel</h2>
+        <section class="section fade-in">
+            <div
+                style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;"
+            >
+                <a href="/Proyectos" class="button">← Volver a Proyectos</a>
+                <a href="/proyectos/ruta-turistica" class="button"
+                    >Ruta Turística</a
+                >
+                <a href="/proyectos/abono-organico" class="button"
+                    >Abono Orgánico</a
+                >
+                <a href="/proyectos/artesanias" class="button">Artesanías</a>
+                <a href="/proyectos/la-miel" class="button">La Miel</a>
+            </div>
+            <h2>Proyecto La Miel</h2>
+
             <img
-                src="https://via.placeholder.com/800x300"
-                alt="Proyecto Amaranto"
-                style="width: 100%; border-radius: 8px; margin-bottom: 1rem;"
+                src="https://images.unsplash.com/photo-1524594081293-190a2fe0baae?auto=format&fit=crop&w=900&q=80"
+                alt="Proyecto La Miel"
+                class="project-img"
             />
+
             <p>
-                El proyecto Amaranto busca fomentar la producción de este
-                cultivo ancestral como fuente de nutrición sostenible y
-                generadora de ingresos.
+                El <strong>Proyecto La Miel</strong> fomenta la apicultura sostenible,
+                generando productos de alta calidad y promoviendo la preservación
+                del medio ambiente y la biodiversidad.
             </p>
-            <p>🌱 Sostenibilidad, nutrición, y comunidad.</p>
+
+            <p>
+                🍯 Producción de miel natural y orgánica.<br />
+                🐝 Cuidado de las abejas y ecosistemas locales.<br />
+                🌱 Educación y capacitación para apicultores comunitarios.
+            </p>
+
+            <div class="highlight-box">
+                <h3>Beneficios del Proyecto La Miel</h3>
+                <ul>
+                    <li>Apoya la economía local y sostenible.</li>
+                    <li>Protege las abejas y promueve la biodiversidad.</li>
+                    <li>
+                        Ofrece productos naturales, saludables y de calidad.
+                    </li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="/TiendaMiel" class="button" style="font-size: 1.1rem;">
+                    🛒 Explorar Productos de Miel
+                </a>
+            </div>
         </section>
     </body>
 </html>

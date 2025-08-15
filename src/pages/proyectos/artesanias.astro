@@ -6,25 +6,108 @@ import Navbar from "../../components/Navbar.astro";
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Proyecto Artesanias - Enactus</title></head
-    >
+        <title>Proyecto Artesanías - Enactus</title>
+        <style>
+            /* Animación de desvanecido */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(10px);
+                animation: fadeIn 0.6s ease forwards;
+            }
 
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Botón mejorado */
+            .button {
+                display: inline-block;
+                background-color: #2e7d32;
+                color: white;
+                padding: 0.7rem 1.5rem;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.2s ease;
+            }
+
+            .button:hover {
+                background-color: #fbc02d;
+                transform: scale(1.03);
+            }
+
+            /* Imagen con sombra y borde */
+            .project-img {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Sección con max width */
+            .section {
+                max-width: 900px;
+                margin: auto;
+                padding: 1rem;
+                line-height: 1.6;
+            }
+
+            h2 {
+                margin-top: 0.5rem;
+                margin-bottom: 1rem;
+                color: #1b5e20;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #333;
+                margin-bottom: 0.8rem;
+            }
+        </style>
+    </head>
     <body>
         <Navbar />
-        <section class="section">
-            <a href="/Proyectos" class="button">Volver a Proyectos</a>
-            <h2>Proyecto Aetesanias</h2>
+        <section class="section fade-in">
+            <div
+                style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;"
+            >
+                <a href="/Proyectos" class="button">← Volver a Proyectos</a>
+                <a href="/proyectos/ruta-turistica" class="button"
+                    >Ruta Turística</a
+                >
+                <a href="/proyectos/abono-organico" class="button"
+                    >Abono Orgánico</a
+                >
+                <a href="/proyectos/artesanias" class="button">Artesanías</a>
+                <a href="/proyectos/la-miel" class="button">La Miel</a>
+            </div>
+            <h2>Proyecto Artesanías</h2>
             <img
-                src="https://via.placeholder.com/800x300"
-                alt="Proyecto Amaranto"
-                style="width: 100%; border-radius: 8px; margin-bottom: 1rem;"
+                src="https://images.unsplash.com/photo-1524594081293-190a2fe0baae?auto=format&fit=crop&w=900&q=80"
+                alt="Proyecto Artesanías"
+                class="project-img"
             />
             <p>
-                El proyecto Amaranto busca fomentar la producción de este
-                cultivo ancestral como fuente de nutrición sostenible y
-                generadora de ingresos.
+                El <strong>Proyecto Artesanías</strong> promueve la preservación
+                de técnicas artesanales tradicionales, fomentando la creatividad
+                y la economía local mediante la producción de piezas únicas y sostenibles.
             </p>
-            <p>🌱 Sostenibilidad, nutrición, y comunidad.</p>
+            <p>
+                🧵 Cada artesanía se realiza con materiales ecológicos y con un
+                enfoque en la sostenibilidad, generando valor social y cultural
+                para las comunidades.
+            </p>
+            <p>
+                🎨 Talleres, demostraciones y venta de productos permiten que
+                más personas se involucren y valoren el talento artesanal.
+            </p>
         </section>
     </body>
 </html>

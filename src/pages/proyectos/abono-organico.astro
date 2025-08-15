@@ -6,24 +6,168 @@ import Navbar from "../../components/Navbar.astro";
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Proyecto Abono Organico - Enactus</title>
+        <title>Proyecto Abono Orgánico - Enactus</title>
+        <style>
+            /* Animación de desvanecido */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(10px);
+                animation: fadeIn 0.6s ease forwards;
+            }
+
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Botón elegante */
+            .button {
+                display: inline-block;
+                background-color: #2e7d32;
+                color: #fff;
+                padding: 0.8rem 1.5rem;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.2s ease;
+            }
+
+            .button:hover {
+                background-color: #fbc02d;
+                transform: scale(1.03);
+            }
+
+            /* Imagen con sombra y bordes redondeados */
+            .project-img {
+                width: 100%;
+                border-radius: 12px;
+                margin-bottom: 1.5rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            /* Sección con max width */
+            .section {
+                max-width: 900px;
+                margin: auto;
+                padding: 2rem;
+                line-height: 1.6;
+            }
+
+            h1 {
+                color: #2e7d32;
+                font-size: 2.2rem;
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+
+            h3 {
+                color: #555;
+                font-weight: normal;
+                margin-bottom: 1.5rem;
+                text-align: center;
+            }
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+                color: #333;
+            }
+
+            .highlight-box {
+                background: #f1f8e9;
+                padding: 1rem;
+                border-radius: 8px;
+                margin-bottom: 1.5rem;
+            }
+
+            .highlight-box h4 {
+                margin-bottom: 0.8rem;
+                color: #33691e;
+            }
+
+            .highlight-box ul {
+                padding-left: 1.2rem;
+                line-height: 1.6;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <Navbar />
-        <section class="section">
-            <a href="/Proyectos" class="button">Volver a Proyectos</a>
-            <h2>Proyecto Abono Organico</h2>
+        <section class="section fade-in">
+            <div
+                style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.5rem;"
+            >
+                <a href="/Proyectos" class="button">← Volver a Proyectos</a>
+                <a href="/proyectos/ruta-turistica" class="button"
+                    >Ruta Turística</a
+                >
+                <a href="/proyectos/abono-organico" class="button"
+                    >Abono Orgánico</a
+                >
+                <a href="/proyectos/artesanias" class="button">Artesanías</a>
+                <a href="/proyectos/la-miel" class="button">La Miel</a>
+            </div>
+
+            <h1>♻ Proyecto Abono Orgánico</h1>
+            <h3>Transformando desechos en vida para la tierra</h3>
+
             <img
-                src="https://via.placeholder.com/800x300"
-                alt="Proyecto Amaranto"
-                style="width: 100%; border-radius: 8px; margin-bottom: 1rem;"
+                src="https://images.unsplash.com/photo-1524594081293-190a2fe0baae?auto=format&fit=crop&w=900&q=80"
+                alt="Abono Orgánico"
+                class="project-img"
             />
+
             <p>
-                El proyecto Amaranto busca fomentar la producción de este
-                cultivo ancestral como fuente de nutrición sostenible y
-                generadora de ingresos.
+                El <strong>Proyecto Abono Orgánico</strong> busca reducir la cantidad
+                de residuos orgánicos y convertirlos en un recurso valioso: <strong
+                    >abono natural</strong
+                >
+                para huertos y cultivos locales.
             </p>
-            <p>🌱 Sostenibilidad, nutrición, y comunidad.</p>
+
+            <p>
+                Con esta iniciativa, contribuimos a la <span
+                    style="color: #2e7d32; font-weight: bold;"
+                    >sostenibilidad</span
+                >, fomentamos la <strong>agricultura saludable</strong> y apoyamos
+                a la economía de la comunidad.
+            </p>
+
+            <div class="highlight-box">
+                <h4>🌿 Beneficios del proyecto</h4>
+                <ul>
+                    <li>
+                        Disminuye la cantidad de residuos que llegan a
+                        vertederos
+                    </li>
+                    <li>
+                        Mejora la calidad del suelo y la productividad agrícola
+                    </li>
+                    <li>Apoya a productores locales con insumos sostenibles</li>
+                    <li>
+                        Fomenta prácticas responsables con el medio ambiente
+                    </li>
+                </ul>
+            </div>
+
+            <p class="center-text">
+                🌱 <em
+                    >Un paso más hacia una comunidad más verde y autosostenible.</em
+                >
+            </p>
+
+            <div class="center-text" style="margin-top: 2rem;">
+                <a href="/contacto" class="button">Quiero saber más</a>
+            </div>
         </section>
     </body>
 </html>
